@@ -1,7 +1,7 @@
 <html>
 <head>
 <title>Bond Web Service Demo</title>
-<link rel="stylesheet" href="css/bond.css"/>
+<link rel="stylesheet" href="css/star-wars.css"/>
 <style>
 body {font-family:georgia;}
 </style>
@@ -16,9 +16,9 @@ function serverSetup(server,cat){
        url = "api.php?cat=" + cat;
    }else{//server is HTML only - simulate web service
        if(cat == "box"){//box office
-           url = "data/bond-box-office.js";
+           url = "data/star-wars-timeline.js";
        }else{//year
-           url = "data/bond-year.js"; 
+           url = "data/star-wars-year.js"; 
        }
    }
    return url;
@@ -65,17 +65,30 @@ function bondJSON(data){
 //JSON processing data goes here
 	//toConsole(data);
 	//$("#output").text(JSON.stringify(data));
+
+	//clear fils from previous click
+	$("#films").html("");
+
+	//add title to h3 element
+	$("#filmtitle").html(data.title);
+
 	$.each(data.films,function(i,item){
 
 		let text = `
 			
+                <b>Episode</b>: ${item.Episode} <br/>
                 <b>Title</b>: ${item.Title} <br/>
-                <b>Film #</b>: ${item.Film} <br/>
                 <b>Year</b>: ${item.Year} <br/>
-                <b>Bond</b>: ${item.Bond} <br/>
-                <b>Box Office</b>: ${item.BoxOffice} <br/>
+                <b>Film #</b>: ${item.Film} <br/>
+                <b>Directed by</b>: ${item.Director} <br/>
                 <b>Writers</b>: ${item.Writers} <br/>
-                <div class="pic"><img src="thumbnails/a-view-to-a-kill.jpg"/></div>
+                <b>Producers</b>: ${item.Producers} <br/>
+                <b>Music By</b>: ${item.Composer} <br/>
+                <b>Protaganist</b>: ${item.Protaganist} <br/>
+                <b>Budget</b>: ${item.Budget} <br/>
+                <b>Box Office</b>: ${item.BoxOffice} <br/>
+                <div class="pic"><img src="thumbnails/${item.Image}" alt=""></div>
+
             
 		
 		`;
@@ -86,9 +99,9 @@ function bondJSON(data){
 </script>
 </head>
 	<body>
-	<h1>Bond Web Service</h1>
-		<a href="year" class="category">Bond Films By Year</a><br />
-		<a href="box" class="category">Bond Films By International Box Office Totals</a>
+	<h1>Star Wars Web Service</h1>
+		<a href="year" class="category">Star Wars Films by Release</a><br />
+		<a href="box" class="category">Star Wars Timeline</a>
 		<h3 id="filmtitle">Title Will Go Here</h3>
 		<div id="films">
 			
