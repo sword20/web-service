@@ -101,6 +101,20 @@
 			  },
 			  {
 				"Film":8,
+				"Title":"Rogue One",
+				"Episode":"Anthology",
+				"Year":2016,
+				"Director":"Gareth Edwards",
+				"Producers":"Kathleen Kennedy, Allison Shearmur and Simon Emanuel",
+				"Writers":"John Kroll and Gary Whitta",
+				"Composer":"Michael Giacchino",
+				"Protaganist":"Jyn Erso",
+				"Budget":"$265 Million",
+				"BoxOffice":"$1.056 Billion",
+				"Image":"rogue-one.jfif"
+			  },
+			  {
+				"Film":9,
 				"Title":"The Last Jedi",
 				"Episode":"VIII",
 				"Year":2017,
@@ -114,7 +128,7 @@
 				"Image":"last-jedi.jfif"
 			  },
 			  {
-				"Film":9,
+				"Film":10,
 				"Title":"The Rise of Skywalker",
 				"Episode":"IX",
 				"Year":2019,
